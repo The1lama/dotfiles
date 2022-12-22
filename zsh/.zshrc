@@ -116,38 +116,3 @@ rehash_precmd() {
 }
 
 add-zsh-hook -Uz precmd rehash_precmd
-
-# omz
-alias zshconfig="geany ~/.zshrc"
-alias ohmyzsh="thunar ~/.oh-my-zsh"
-
-# ls
-alias ls='ls -la --color=auto'
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
-
-
-# VPN
-alias vpnc='sudo protonvpn c --cc us'   # connect to US server
-alias vpns='protonvpn status'           # sees server status
-alias vpnd='sudo protonvpn d'           # disconnects from server
-alias vpnr='sudo protonvpn r'           # reconnects to server
-
-# Navigation
-alias ..='cd ..'    # goes down one directory
-alias cc='clear'    # clears terminal screen
-
-
-# Terminal apps
-alias cbons='cbonsai -S'
-
-# git
-alias gcl='git clone --depth 1'
-alias gi='git init'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push origin master'
