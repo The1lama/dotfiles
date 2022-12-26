@@ -1,0 +1,22 @@
+{
+    "Deafult for python": {
+        "prefix": "deafult",
+        "body": [
+            "\n\n",
+            "def main():",
+            "    pass",
+            "\n",
+            "if __name__ == '__main__':",
+            "    main()"
+        ],
+        "description": "Creates a deafult format for the begining of a python file"
+    },
+    "_main": {
+        "prefix": "_main",
+        "body": [
+            "if __name__ == '__main__':",
+            "    pass"
+        ],
+        "description": "Fast if name == main"
+    }
+}

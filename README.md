@@ -15,3 +15,6 @@ My personal dotfiles and alike
 * ## [terminal](https://github.com/The1lama/dotfiles/tree/main/terminal)
   * [.zshrc](https://github.com/The1lama/dotfiles/blob/main/terminal/.zshrc)
   * [.alias](https://github.com/The1lama/dotfiles/blob/main/terminal/.alias)
+
+* ## [VSCode](https://github.com/The1lama/dotfiles/tree/main/VSCode)
+  * [python](https://github.com/The1lama/dotfiles/blob/main/VSCode/pythonSnippets.json)
