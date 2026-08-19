@@ -1,0 +1,163 @@
+// -*- mode: jsonc -*-
+[{
+    "output": ["DP-1"],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 34, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+	      "wireplumber",
+        "clock"
+    ],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+      "format": "{id} {icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "urgent": "",
+        "active": "",
+        "default": ""
+      }
+    },
+    "custom/spotify":
+    {
+      "format": "  {}",
+      "return-type": "json",
+      "on-click": "playerctl -p spotify play-pause",
+      "on-click-right": "spotifatius toggle-liked",
+      "on-click-middle": "playerctl -p spotify next",
+      "exec": "spotifatius monitor"
+    },
+    "mpris": 
+    {
+      "player": "spotify",
+      "dynamic-order": ["artist", "title"],
+      "format": "{status_icon} {dynamic}",
+      "format-paused": "{status_icon} <i>{dynamic}</i>",
+      "status-icons": {
+        "playing": "▶", 
+        "paused": "⏸" 
+      }
+    },
+    "hyprland/window":
+    {
+      "format": "{title}",
+      "separate-outputs": true
+    },
+
+    "clock": {
+        // "timezone": "america/new_york",
+        "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m-%y}",
+        "calendar": {
+          "format": {
+            "days": "<span weight='normal'>{}</span>",
+            "months": "<span color='#cdd6f4'><b>{}</b></span>",
+            "today": "<span color='#665c59'><u>{}</u></span>",
+            "weekdays": "<span color='#ebdbb2'><b>{}</b></span>",
+            "weeks": "<span color='#a6e3a1'><b>w{}</b></span>"
+          }
+        }
+    },
+    "wireplumber": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "pavucontrol"
+    }
+},
+{
+    "output": ["DP-2"],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 34, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "mpris"
+    ],
+
+
+    // Modules configuration
+    "hyprland/workspaces": {
+      "format": "{id} {icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "urgent": "",
+        "active": "",
+        "default": ""
+      }
+    },
+    "custom/spotify":
+    {
+      "format": "  {}",
+      "return-type": "json",
+      "on-click": "playerctl -p spotify play-pause",
+      "on-click-right": "spotifatius toggle-liked",
+      "on-click-middle": "playerctl -p spotify next",
+      "exec": "spotifatius monitor"
+    },
+    "mpris": 
+    {
+      "player": "spotify",
+      "dynamic-order": ["artist", "title"],
+      "format": "{status_icon} {dynamic}",
+      "format-paused": "{status_icon} <i>{dynamic}</i>",
+      "status-icons": {
+        "playing": "▶", 
+        "paused": "⏸" 
+      }
+    },
+    "hyprland/window":
+    {
+      "format": "{title}",
+      "separate-outputs": true
+    },
+
+    "clock": {
+        // "timezone": "america/new_york",
+        "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m-%y}",
+        "calendar": {
+          "format": {
+            "days": "<span weight='normal'>{}</span>",
+            "months": "<span color='#cdd6f4'><b>{}</b></span>",
+            "today": "<span color='#665c59'><u>{}</u></span>",
+            "weekdays": "<span color='#ebdbb2'><b>{}</b></span>",
+            "weeks": "<span color='#a6e3a1'><b>w{}</b></span>"
+          }
+        }
+    },
+    "wireplumber": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+
+}]

@@ -1,0 +1,48 @@
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" --- Basic settings ---
+let mapleader=" "
+set scrolloff=999
+set number
+set incsearch
+
+" --- Clipboard (Yank, delete, paste använder systemets urklipp) ---
+set clipboard+=unnamed
+
+" --- Plugins ---
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+
+" --- Markör (Cursor) ---
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20
+
+" --- Don't use Ex mode, use Q for formatting ---
+map Q gq
+
+" --- Ladda om configen ---
+nnoremap <leader>sv :source ~/.ideavimrc<CR>
+
+" --- Kodvikning (Folding) ---
+nnoremap <leader>z :action ExpandCollapseAction<CR>
+nnoremap <leader>zc :action CollapseRegion<CR>
+nnoremap <leader>zo :action ExpandRegion<CR>
+nnoremap <leader>zR :action ExpandAllRegions<CR>
+nnoremap <leader>zM :action CollapseAllRegions<CR>
+
+" --- Genvägar för Rider / Unreal / Git ---
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>pv :action ActivateProjectToolWindow<CR>
+nnoremap <leader>t :action ActivateGitHubCopilotChatToolWindow<CR>
+nnoremap <C-Space> :action ActivateUnrealLinkToolWindow<CR>
+nnoremap <C-o> :action SwitchHeaderSource<CR>
+
+nnoremap <C-w> :action CloseContent<CR>
+
+" --Om Rider är envist och fortfarande blockerar tangenterna, kan du göra detta direkt i Riders inställningar på 30 sekunder:
+" --Öppna inställningarna (Ctrl+Alt+S på Windows, Cmd+, på Mac) och gå till Keymap.
+" --Sök efter "Down" (under Editor Actions eller System). Högerklicka på den, välj Add Keyboard Shortcut och tryck j. (Klicka på "Leave" eller "Keep" om den varnar).
+" --Sök efter "Up". Högerklicka, välj Add Keyboard Shortcut och tryck k.
+" --Sök efter "Left" (för att stänga mappar) -> lägg till h.
+" --Sök efter "Right" (för att öppna mappar) -> lägg till l.

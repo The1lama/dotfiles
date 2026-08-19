@@ -1,0 +1,7 @@
+# Keybindings
+
+# CTRL + Backspace = Delete Word
+bindkey "^H" backward-delete-word
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward

@@ -1,0 +1,54 @@
+#zshrc config file
+#
+#Get other Paths
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH=$PATH:/home/rasmus/.spicetify
+export PATH=$PATH:/home/rasmus/.local/bin
+
+
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# load diversion (source control)
+export PATH="$HOME/.diversion/bin:$PATH"
+
+# Adds oh my posh PROMT to zsh
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion styling
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# aliases
+source ~/.aliases
+source ~/.keybinds
+source ~/.zprofile
+
+fastfetch -c ~/.config/fastfetch/config.jsonc
+

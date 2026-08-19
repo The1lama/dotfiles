@@ -1,0 +1,116 @@
+@define-color primary-color#282828;
+@define-color secondary-color #ebdbb2;
+@define-color third-color #d79921;
+@define-color warning-color #b16286;
+@define-color focus-color #665c59;
+
+* {
+    min-height: 0;
+    min-width: 0;
+    font-family: "FireCode Nerd Font Mono";
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+window#waybar {
+    /* The bars background color */
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+.modules-right {
+    margin: 10px 10px 0 0;
+}
+.modules-center {
+    margin: 10px 0 0 0;
+}
+.modules-left {
+    margin: 10px 0 0 10px;
+}
+
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces {
+    background-color: @primary-color;
+}
+#workspaces button {
+  /*=== Disables wierd hover effect from some package ====*/
+  -gtk-icon-shadow: none;
+  -gtk-icon-effect: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+  box-shadow: none;
+  transition: none;
+  /*================================================*/
+
+  padding: 2px 9px 2px 4px;
+  color:@secondary-color;
+}
+
+#workspaces button:hover {
+    color: @third-color;
+}
+
+#workspaces button.focused {
+    background-color: @focus-color;
+}
+
+#workspaces button.urgent {
+    background-color: @warning-color; 
+}
+
+#mode,
+#window,
+#clock,
+#backlight,
+#wireplumber,
+#mpris,
+#load {
+    padding: 0 10px;
+    background-color: @primary-color;
+    color: @secondary-color;
+}
+
+#mode {
+    background-color: #689d6a;
+    color: @primary-color;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: #282828;
+        color: #ebdbb2;
+    }
+}
+
+#wireplumber.muted {
+    background-color: @focus-color;
+}
+
+#mpris.playing {
+    background-color:#CCB499;
+    color: @primary-color;
+}

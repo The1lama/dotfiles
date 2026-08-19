@@ -1,0 +1,63 @@
+#alias ls='ls -la --color'
+
+# chance ls to lsd
+alias ls='lsd -lah --group-directories-first'
+alias lc='clear && lsd -lah'
+
+alias grep='grep --color'
+
+# Start Unreal
+alias ue5.7='/mnt/1TBSdd/Unreal/Engine/Binaries/Linux/UnrealEditor &'
+alias ue5.8='/mnt/1TBSdd/Dev/Engine/UnrealEngine5.8.0/Engine/Binaries/Linux/UnrealEditor &'
+
+# Start Blender
+alias blender='/mnt/2TBHdd/Document/Blender/blender-5.1.0-linux-x64/blender &'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# pacman && yay
+alias pacsyu='sudo pacman -Syyu'                  # updates only standard pkgs
+alias yaysua='yay -Sua --noconfirm'               # updates only AUR pkgs
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'  #removes orphaned packages
+
+# get fastest mirrors
+alias mirror='sudo reflector -f 20 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+
+# changes programs to muscle memories
+alias vim='nvim'
+alias vi='nvim'
+alias neofetch='fastfetch'
+
+# shortcuts 
+alias :q="exit"
+alias q="exit"
+alias c='clear'
+alias ssn='sudo shutdown now'
+alias sr='sudo reboot'
+
+# adding flags
+alias mv='mv -i'              # confirm before overwriting something
+alias rm='rm -i'              # confirm before overwriting something
+alias cp='cp -i'              # confirm before overwriting something
+alias mkdir='mkdir -pv'       # creates parrent dirs if there is none
+
+# kitty
+alias icat='kitten icat'      # to display image in terminal
+
+# Jump between drives
+alias DiskSdd='cd /mnt/1TBSdd'
+alias DiskHdd='cd /mnt/2TBHdd'
+alias DiskNet='cd /mnt/network_share'
+alias DiskSmall='cd /mnt/SmallHdd'
+alias DiskHome='cd /home/rasmus'
+
+
+
+
+
+
