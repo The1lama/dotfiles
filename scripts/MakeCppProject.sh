@@ -2,6 +2,8 @@
 ###################################
 #### Create CPP project script ####
 ###################################
+# Source:
+# https://codinpanguin.uk/blog/0001-CppOnArchLinux
 
 #### Colors ####
 GREEN='\033[0;32m'
