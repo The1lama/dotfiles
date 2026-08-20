@@ -32,8 +32,27 @@
 ```
 </details>
 
+<details>
+<summary><b>Application Installer</b></summary>
 
+### Pacman 
+#### TERMINAL
+- git ............. [ Version Control ]
+- nvim ............ [ Terminal text editor ]
+- htop ............ [ Task Manager ]
+- fastfetch ....... [ Neofetch Alt ]
+- figlet .......... [ Create ASCII Text ]
 
+#### GUI
+- qview ........... [ Image viewer ]
+- vlc ............. [ Video player ]
+- firefox ......... [ Web browser ]
+- rofi ............ [ Application launcher ]
 
+### AUR
+#### TERMINAL
 
+#### GUI
+
+</details>
 
