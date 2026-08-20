@@ -12,12 +12,7 @@ if [ "$EUID" -eq 0 ]; then
 fi 
 
 PACMAN_PACKAGES=(
-  "git"
-  "nvim"
-  "htop"
-  "fastfetch"
-  "qview"
-  "figlet"
+  "git" "nvim" "htop" "fastfetch" "qview" "figlet" "vlc" "firefox" "rofi"
 )
 
 
@@ -36,7 +31,6 @@ if [[ ${AUR_PACKAGES[@]} -gt 0 ]]; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
 
-
   ## Install yay if we dont have it
   if ! command -v yay &> /dev/null; then
     echo "!!! yay is not installed. Installing yay..."
@@ -54,8 +48,4 @@ if [[ ${AUR_PACKAGES[@]} -gt 0 ]]; then
 else
   echo "No AUR packages specified. Skipping..."
 fi
-
-
-
-
 
