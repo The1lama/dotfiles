@@ -11,10 +11,10 @@ vim.opt.foldlevel = 99
 vim.opt.foldenable = true
 
 vim.opt.fillchars = {
-  fold = " ",
-  foldopen = "▼",
-  foldclose = "▶",
-  eob = " ",
+	fold = " ",
+	foldopen = "▼",
+	foldclose = "▶",
+	eob = " ",
 }
 vim.opt.foldtext = "Folded lines -->"
 
@@ -24,10 +24,8 @@ vim.opt.clipboard = "unnamedplus"
 -- reload vim config file
 vim.keymap.set("n", "<leader>sv", ":source ~/.config/nvim/init.lua<CR>") -- toggle fold
 
-
 vim.treesitter.language.register("bash", "conf")
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
-
 
 -- Vim keymap cheat sheet --
 -- to set a keybind you need to set in what enviroment the keybind should work in such as the examples below.
@@ -61,19 +59,19 @@ vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,a:blinkwait700-blinkof
 -- | <C-S-f> (Control + Shift + f)
 
 -- open and close code folds ---
-vim.keymap.set("n", "<leader>z", "za")  -- toggle fold
-vim.keymap.set("n", "<leader>zc", "zc") -- close fold
-vim.keymap.set("n", "<leader>zo", "zo") -- open fold
-vim.keymap.set("n", "<leader>zR", "zR") -- open all
-vim.keymap.set("n", "<leader>zM", "zM") -- close all
+vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" }) -- toggle fold
+vim.keymap.set("n", "<leader>zc", "zc", { desc = "Close fold" }) -- close fold
+vim.keymap.set("n", "<leader>zo", "zo", { desc = "Open fold" }) -- open fold
+vim.keymap.set("n", "<leader>zR", "zR", { desc = "Open all folds" }) -- open all
+vim.keymap.set("n", "<leader>zM", "zM", { desc = "Close all folds" }) -- close all
 -- open and close code folds ---
 
 -- navigate all between the windows in every mode --
 -- terminal mode
-vim.keymap.set("t", "<A-h>", "<C-\\><C-n><C-w>h")
-vim.keymap.set("t", "<A-j>", "<C-\\><C-n><C-w>j")
-vim.keymap.set("t", "<A-k>", "<C-\\><C-n><C-w>k")
-vim.keymap.set("t", "<A-l>", "<C-\\><C-n><C-w>l")
+vim.keymap.set("t", "<A-h>", "<C-\\><C-n><C-w>h", { desc = "Navigate left window" })
+vim.keymap.set("t", "<A-j>", "<C-\\><C-n><C-w>j", { desc = "Nagivate down window" })
+vim.keymap.set("t", "<A-k>", "<C-\\><C-n><C-w>k", { desc = "Nagivate up window" })
+vim.keymap.set("t", "<A-l>", "<C-\\><C-n><C-w>l", { desc = "Nagivte right window" })
 -- insert mode
 vim.keymap.set("i", "<A-h>", "<C-\\><C-n><C-w>h")
 vim.keymap.set("i", "<A-j>", "<C-\\><C-n><C-w>j")
@@ -88,32 +86,32 @@ vim.keymap.set("n", "<A-l>", "<C-w>l")
 -- commands and keyboard shortcuts for opening terminal in vim --
 -- Set things when opening terminal
 vim.api.nvim_create_autocmd("TermOpen", {
-  group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-  callback = function()
-    vim.opt.number = false
-    vim.opt.relativenumber = false
-  end,
+	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+	callback = function()
+		vim.opt.number = false
+		vim.opt.relativenumber = false
+	end,
 })
 
 -- horizontal terminal
-vim.keymap.set("n", "<leader>ht", function()
-  vim.cmd("botright 10split | terminal")
+vim.keymap.set("n", "<leader>th", function()
+	vim.cmd("botright 10split | terminal")
 
-  local job_id = vim.b.terminal_job_id
-  if job_id then
-    vim.api.nvim_chan_send(job_id, "clear\n")
-  end
-  vim.cmd("startinsert")
-end)
+	local job_id = vim.b.terminal_job_id
+	if job_id then
+		vim.api.nvim_chan_send(job_id, "clear\n")
+	end
+	vim.cmd("startinsert")
+end, { desc = "Horizontal Terminal" })
 
 -- vertical terminal
-vim.keymap.set("n", "<leader>vt", function()
-  vim.cmd("botright 50vsplit | terminal")
+vim.keymap.set("n", "<leader>tv", function()
+	vim.cmd("botright 50vsplit | terminal")
 
-  local job_id = vim.b.terminal_job_id
-  if job_id then
-    vim.api.nvim_chan_send(job_id, "clear\n")
-  end
-  vim.cmd("startinsert")
-end)
+	local job_id = vim.b.terminal_job_id
+	if job_id then
+		vim.api.nvim_chan_send(job_id, "clear\n")
+	end
+	vim.cmd("startinsert")
+end, { desc = "Horizontal Terminal" })
 -- commands and keyboard shortcuts for opening terminal in vim --
