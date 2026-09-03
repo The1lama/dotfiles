@@ -1,0 +1,12 @@
+# Only push safe options. No [user] [credential] stuff
+# Put them inside the .gitconfig.local file
+[commit]
+	template = /home/rasmus/.config/git/gitmessage
+[core]
+	editor = nvim
+
+[alias]
+  st = status
+
+[include]
+  path = ~/.gitconfig.local
