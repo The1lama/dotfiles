@@ -6,8 +6,9 @@ vim.cmd("set number")
 vim.cmd("set scrolloff=999")
 
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
 vim.opt.fillchars = {
@@ -82,7 +83,7 @@ vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
 vim.keymap.set("n", "<A-l>", "<C-w>l")
-
+--
 -- commands and keyboard shortcuts for opening terminal in vim --
 -- Set things when opening terminal
 vim.api.nvim_create_autocmd("TermOpen", {
