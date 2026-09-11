@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 working_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-images_path="${working_dir}/shutdown"
+images_path="${working_dir}"
 
 ## Save the files in the array $files
 files=("$images_path"/*.jpg)
@@ -12,7 +12,6 @@ conf_path="${images_path}/shutdownImage.conf"
 
 # create a hyprlock conf file for displaying wallpaper 
 # and echo the config in to file
-touch $conf_path
 echo "background {
     monitor =
     path = ${rand_file}
