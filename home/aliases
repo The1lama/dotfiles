@@ -37,7 +37,8 @@ alias neofetch='fastfetch'
 alias :q="exit"
 alias q="exit"
 alias c='clear'
-alias ssn='sudo shutdown now'
+#alias ssn='sudo shutdown now'
+alias ssn='bash ~/Scripts/shutdown/shutdown.sh'   # my custom shutdown script
 alias sr='sudo reboot'
 
 # adding flags
