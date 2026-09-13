@@ -1,14 +1,20 @@
 #!/usr/bin/bash
+shopt -s nullglob
 
 working_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 images_path="${working_dir}"
 
 ## Save the files in the array $files
-files=("$images_path"/*.jpg)
+files=("$images_path"/*.jpg "$images_path"/*.png)
+
+if [[ ${#files[@]} -le 0 ]]; then
+  shutdown -h now
+fi
+
 # Get a random file from path
 rand_file="${files[RANDOM % ${#files[@]}]}"
 
-conf_path="${images_path}/shutdownImage.conf"
+conf_path="${images_path}/hyprlockShutdown.conf"
 
 # create a hyprlock conf file for displaying wallpaper 
 # and echo the config in to file
@@ -26,6 +32,5 @@ sleep 5
 
 # shutdown
 shutdown -h now 
-
 
 
