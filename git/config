@@ -10,3 +10,5 @@
 
 [include]
   path = ~/.gitconfig.local
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
