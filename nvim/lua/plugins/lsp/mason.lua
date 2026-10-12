@@ -22,11 +22,11 @@ return {
 			"lua_ls",
 			"html",
 			"cssls",
-			"grammarly",
 			"jsonls",
 			"clangd",
 			--"clang-format",
 			--"codellbdb",
+			"harper_ls",
 		},
 	},
 }
