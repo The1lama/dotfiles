@@ -7,11 +7,11 @@ return {
 				local opts = { buffer = args.buf }
 
 				-- Universial LSP Keybinds
-				opts.desc = "LSP Code Action (Fix Typoes / Suggestions)"
-				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
 				opts.desc = "LSP Show Line Grammar/Error Diagnosics"
 				vim.keymap.set("n", "<leader>w", vim.diagnostic.open_float, opts)
+
+				opts.desc = "LSP Code Action (Fix Typoes / Suggestions)"
+				vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 
 				opts.desc = "LSP Hover Documentation / Info"
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
