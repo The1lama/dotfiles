@@ -2,3 +2,5 @@
 # git credentials
 git/credentials
 git/gitCredentials
+
+scripts/shutdown/hyprlockShutdown.conf
