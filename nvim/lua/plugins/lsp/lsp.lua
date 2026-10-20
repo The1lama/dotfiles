@@ -1,14 +1,20 @@
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = { "williamboman/mason.nvim" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"nvim-telescope/telescope.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(args)
 				local opts = { buffer = args.buf }
 
-				-- Universial LSP Keybinds
+				-- Universal LSP Keybinds
 				opts.desc = "LSP Show Line Grammar/Error Diagnosics"
-				vim.keymap.set("n", "<leader>w", vim.diagnostic.open_float, opts)
+				vim.keymap.set("n", "<leader>w", function()
+					require("telescope.builtin").diagnostics()
+				end, opts)
 
 				opts.desc = "LSP Code Action (Fix Typoes / Suggestions)"
 				vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
