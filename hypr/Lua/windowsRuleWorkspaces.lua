@@ -55,6 +55,13 @@ hl.window_rule({
 	workspace = "2 silent",
 })
 
+hl.window_rule({
+	enabled = true,
+	name = "Don't focus on unity popups",
+	match = { class = "^Unity$" },
+	workspace = "silent",
+})
+
 ------------------------------
 ---- FLOATING SUB WINDOWS ----
 ------------------------------

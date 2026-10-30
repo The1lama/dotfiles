@@ -22,6 +22,14 @@ return {
 				opts.desc = "LSP Hover Documentation / Info"
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
+				opts.desc = "LSP Go to Definition"
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+
+				opts.desc = "LSP Go to References"
+				vim.keymap.set("n", "gd", function()
+					require("telescope.builtin").lsp_references()
+				end, opts)
+
 				-- Clangd specific shotcuts
 				local client = vim.lsp.get_client_by_id(args.data.client_id)
 				if client and client.name == "clangd" then
