@@ -22,6 +22,18 @@ hl.config({
         allow_tearing = false,
 
         layout = "dwindle",
+        -- Layouts
+        -- dwindle
+        -- scrolling
+    },
+
+    dwindle = {
+      preserve_split = true
+    },
+
+    scrolling = {
+      column_width = 0.5,
+      fullscreen_on_one_column = true
     },
 
     decoration = {

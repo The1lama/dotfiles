@@ -22,7 +22,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprlock")
 
   -- start macro/remapping program for capslock
-  hl.exec_cmd("keyd")
+  -- hl.exec_cmd("keyd")
 
 
   -- open applications

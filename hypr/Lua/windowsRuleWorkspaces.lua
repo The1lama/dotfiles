@@ -35,8 +35,9 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
-	workspace = "2",
+	workspace = "10",
 	monitor = "DP-2",
+  layout = "scrolling"
 })
 
 -- spawn discord on second workspace without focusing on it

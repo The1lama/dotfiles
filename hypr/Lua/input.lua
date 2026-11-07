@@ -5,7 +5,7 @@
 
 hl.config({
   input = {
-      kb_layout  = "se",
+      kb_layout  = "us,se",
       kb_variant = "",
       kb_model   = "",
       kb_options = "",
