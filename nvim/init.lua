@@ -19,6 +19,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
+-- load colorscheme
+require("sunset-theme")
 
 -- loads lsp language server settings
 require("lsp")

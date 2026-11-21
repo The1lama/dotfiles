@@ -1,8 +1,8 @@
-@define-color primary-color#282828;
-@define-color secondary-color #ebdbb2;
-@define-color third-color #d79921;
-@define-color warning-color #b16286;
-@define-color focus-color #665c59;
+@define-color primary-color#0e0f19;
+@define-color secondary-color #f4d3d6;
+@define-color third-color #fadb6b;
+@define-color warning-color #e63956;
+@define-color focus-color #3d354b;
 
 * {
     min-height: 0;

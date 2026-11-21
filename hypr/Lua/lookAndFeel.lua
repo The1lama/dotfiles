@@ -11,8 +11,8 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(215,153,33,1)", "rgba(235,219,178,1)"}, angle = 200 },
-            inactive_border = "rgba(40,40,40,0.6)",
+            active_border   = { colors = {"rgba(ff8c42ff)", "rgba(e63956ff)"}, angle = 45 },
+            inactive_border = "rgba(1a1827aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps

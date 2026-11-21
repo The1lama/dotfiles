@@ -32,20 +32,23 @@ hl.window_rule({
 hl.workspace_rule({
 	workspace = "1",
 	monitor = "DP-1",
+  default = true,
 })
 
 hl.workspace_rule({
 	workspace = "10",
 	monitor = "DP-2",
-  layout = "scrolling"
+  layout = "scrolling",
+  default = true,
 })
+
 
 -- spawn discord on second workspace without focusing on it
 hl.window_rule({
 	enabled = true,
 	name = "Open discord at second monitor",
 	match = { class = "^discord$" },
-	workspace = "2 silent",
+	workspace = "10 silent",
 })
 
 -- spawn steam on second workspace without focusing on it
@@ -53,7 +56,7 @@ hl.window_rule({
 	enabled = true,
 	name = "Open steam at second monitor",
 	match = { class = "^steam$" },
-	workspace = "2 silent",
+	workspace = "10 silent",
 })
 
 hl.window_rule({
@@ -85,15 +88,6 @@ hl.window_rule({
 	center = true,
 })
 
---hl.window_rule({
---  enabled = true,
---  name    = "Open VLC in floating windows",
---  match   =  { class = "^vlc$" },
---  float   = true,
---  size = "990 725",
---  center = true,
---})
-
 hl.window_rule({
 	enabled = true,
 	name = "Open steam sub windows in floating state",
@@ -120,3 +114,16 @@ hl.window_rule({
 	rounding = 0,
 	border_size = 0,
 })
+
+
+-- DEV STUFF
+
+hl.window_rule({
+	enabled = true,
+	name = "Open LumiEngine in floating windows",
+	match = { class = "^LumiEngine$" },
+	float = true,
+	center = true,
+})
+
+

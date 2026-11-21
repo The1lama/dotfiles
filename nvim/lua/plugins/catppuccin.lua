@@ -12,6 +12,6 @@ return { -- catppuccin colorscheme for nvim
         loops = { "bold" },
       }
     })
-    vim.cmd.colorscheme "catppuccin"
+    -- vim.cmd.colorscheme "catppuccin"
   end
 }
